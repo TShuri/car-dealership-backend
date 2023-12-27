@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.urls import re_path
-from api.views import CarsView
+from api.views import CarsView, DealsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('unsold_cars', CarsView.as_view())
+    path('cars', CarsView.as_view()),
+    path('deals', DealsView.as_view())
 ]
