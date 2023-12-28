@@ -17,10 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.urls import re_path
-from api.views import CarsView, DealsView
+from api.views import CarsView, DealsClientView, DealsEmployeeView, ServicesClientView, ServicesEmployeeView, ServicesHistoryView, AuthView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cars', CarsView.as_view()),
-    path('deals', DealsView.as_view())
+    path('client/deals', DealsClientView.as_view()),
+    path('employee/deals', DealsEmployeeView.as_view()),
+    path('client/services', ServicesClientView.as_view()),
+    path('employee/services', ServicesEmployeeView.as_view()),
+    path('services/history', ServicesHistoryView.as_view()),
+    path('auth/', AuthView.as_view()),
+
 ]
